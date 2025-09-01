@@ -1,5 +1,7 @@
 # php-unit
 
+composer命令:  composer require basar911/php-passport dev-main
+
 #### 介绍
 php常用加解密和签名生成及验证
 常用加解密类型：AES/STREAM/SM4/3-DES(处理类归纳于：vendor\basar911\php-passport\src\handler)
