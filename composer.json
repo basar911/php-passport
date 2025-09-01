@@ -1,0 +1,26 @@
+{
+    "name": "basar911/php-passport",
+    "description": "php password encrypt and decrypt, sign generate and verify",
+    "keywords": ["php", "password", "sign"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Liu Yun",
+            "email": "523094696@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.0",
+        "ext-bcmath": "*",
+        "ext-openssl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "basar911\\phpPassport\\": "src/"
+        }
+    }
+}
