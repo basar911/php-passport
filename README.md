@@ -2,18 +2,21 @@
 
 #### 介绍
 php常用加解密和签名生成及验证
-常用加解密类型：AES/STREAM/SM4/3-DES
+常用加解密类型：AES/STREAM/SM4/3-DES(处理类归纳于：vendor\basar911\php-passport\src\handler)
 
 #### 签名加密 + 验签解密 例子
+
+注意：SM4加解密密钥长度至少15，TripleDes加解密密钥长度必须为偶数
+
 ```php
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-// 选择加解密处理类
+// 选择加解密处理类(归纳于：vendor\basar911\php-passport\src\handler)
 $handler = \basar911\phpPassport\handler\SM4Handler::class;
 
-// 选择签名处理类
-$sign_handler = \basar911\phpPassport\signHandler\FinanceSignHandler::class;
+// 选择签名处理类(归纳于：vendor\basar911\php-passport\src\signHandler)
+$sign_handler = \basar911\phpPassport\signHandler\DefaultSignHandler::class;
 
 // 加密数组数据，可任意设置
 $data = ['handler' => $handler, 'sign' => $sign_handler, 'a' => 1, 'b' => [['c' => 'as3423'], ['c' => 'sdy54ty45']]];
@@ -43,7 +46,7 @@ echo json_encode(compact('encrypt', 'decrypt'), 384);
 require __DIR__ . '/vendor/autoload.php';
 
 // 选择加解密处理类
-$handler = \basar911\phpPassport\handler\SM4Handler::class;
+$handler = new \basar911\phpPassport\handler\SM4Handler();
 
 // 加密数组数据，可任意设置
 $data = ['handler' => $handler, 'sign' => $sign_handler, 'a' => 1, 'b' => [['c' => 'as3423'], ['c' => 'sdy54ty45']]];
